@@ -1,0 +1,41 @@
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^([0-9]+)\/(.*)/?$ site/index.php?p=imoveis_ver&id=$1
+RewriteRule ^([0-9]+)/?$ site/index.php?p=imoveis_ver&id=$1
+RewriteRule ^pagina/([0-9]+)\/(.*)/?$ site/index.php?p=sobre&id=$1
+RewriteRule ^pagina/([0-9]+)/?$ site/index.php?p=sobre&id=$1
+
+RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt)$
+
+
+RewriteRule ^enviandosolicite site/index.php?p=solicite_enviar
+RewriteRule ^enviandocadastre site/index.php?p=cadastro_enviar
+
+RewriteRule ^enviando site/index.php?p=envia
+RewriteRule ^home site/index.php?p=principal
+RewriteRule ^galeria site/index.php?p=galeria
+RewriteRule ^blog site/index.php?p=blog
+
+RewriteRule ^galerias site/index.php?p=galerias
+RewriteRule ^faleconosco site/index.php?p=contato
+RewriteRule ^contato site/index.php?p=contato
+
+
+
+RewriteRule ^ver/([0-9]+)\/(.*)/?$ site/index.php?p=imoveis&categoria=$1
+RewriteRule ^ver/([0-9]+)\/(.*)\/pg/([0-9]+)/?$ site/index.php?p=imoveis&categoria=$1&pagina=$2&pg=$3
+RewriteRule ^ver/([0-9]+)/pg/([0-9]+)/?$ site/index.php?p=imoveis&categoria=$1&pg=$2
+
+ 
+
+RewriteRule ^blog/([0-9]+)\/(.*)\.html/pg/([0-9]+)/?$ site/index.php?p=blog&categoria=$1&pagina=$2&pg=$3
+RewriteRule ^blog/([0-9]+)/pg/([0-9]+)/?$ site/index.php?p=blog&categoria=$1&pg=$2
+
+
+RewriteRule ^galeria/pg/([0-9]+)/?$ site/index.php?p=galeria&pg=$1
+
+
+ 

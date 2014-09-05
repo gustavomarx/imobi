@@ -1,0 +1,10 @@
+<? 
+include ('includes/BancoDeDados.php'); 
+include ('includes/Funcoes.php'); 
+include ('includes/Config.php'); 
+
+db_consulta("UPDATE tbcontador SET acessos=acessos+1 WHERE id_pagina=1");
+
+header('Location: ./site',true); 
+
+?>

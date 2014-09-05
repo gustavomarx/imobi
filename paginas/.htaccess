@@ -1,0 +1,46 @@
+Options +FollowSymLinks
+AddType application/x-httpd-php .php .xml
+AddType application/x-httpd-php .php .css
+AddType application/x-httpd-php .css
+
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^c/([0-9]+)\/(.*)\$ site/index.php?p=cursos_ver&id=$1
+RewriteRule ^c/([0-9]+)/?$ site/index.php?p=cursos_ver&id=$1
+
+RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt)$
+
+RewriteRule ^mural site/index.php?p=mural
+RewriteRule ^loja site/index.php?p=loja
+RewriteRule ^login site/index.php?p=membros
+RewriteRule ^login2 site/index.php?p=login2
+RewriteRule ^login3 site/index.php?p=login3
+RewriteRule ^membros site/index.php?p=membros
+RewriteRule ^editar site/index.php?p=editar
+RewriteRule ^galerias site/index.php?p=galerias
+RewriteRule ^faleconosco site/index.php?p=contato
+RewriteRule ^contato site/index.php?p=contato
+RewriteRule ^agenda site/index.php?p=agenda
+RewriteRule ^agenda_ver site/index.php?p=agenda_ver
+RewriteRule ^lideranca site/index.php?p=lideranca
+RewriteRule ^pedidosdeoracao site/index.php?p=pedidosdeoracao
+
+RewriteRule ^c/([0-9]+)\/(.*)\/pg/([0-9]+)/?$ site/index.php?p=cursos_ver&categoria=$1&pagina=$2&pg=$3
+RewriteRule ^c/([0-9]+)/pg/([0-9]+)/?$ site/index.php?p=cursos_ver&categoria=$1&pg=$2
+
+RewriteRule ^videos/([0-9]+)\/(.*)\.html/pg/([0-9]+)/?$ site/index.php?p=videos&categoria=$1&pagina=$2&pg=$3
+RewriteRule ^videos/([0-9]+)/pg/([0-9]+)/?$ site/index.php?p=videos&categoria=$1&pg=$2
+RewriteRule ^agenda/pg/([0-9]+)/?$ site/index.php?p=agenda&pg=$1
+
+RewriteRule ^noticias/([0-9]+)\/(.*)\.html/pg/([0-9]+)/?$ site/index.php?p=noticias&categoria=$1&pagina=$2&pg=$3
+RewriteRule ^noticias/([0-9]+)/pg/([0-9]+)/?$ site/index.php?p=noticias&categoria=$1&pg=$2
+
+RewriteRule ^galeria/pg/([0-9]+)/?$ site/index.php?p=galeria&pg=$1
+RewriteRule ^mural/pg/([0-9]+)/?$ site/index.php?p=mural&pg=$1
+RewriteRule ^loja/pg/([0-9]+)/?$ site/index.php?p=loja&pg=$1
+
+
+ 
